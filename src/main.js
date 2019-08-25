@@ -6,6 +6,8 @@ import router from './router'
 import './assets/border.css'
 import './assets/reset.css'
 import fastClick from 'fastclick'
+//引入字体文件
+import './assets/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
