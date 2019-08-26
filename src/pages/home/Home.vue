@@ -3,6 +3,8 @@
     <Header></Header>
     <Swiper></Swiper>
     <Icon></Icon>
+    <Commend></Commend>
+    <Weekond></Weekond>
     
     
     
@@ -16,6 +18,9 @@ import Header from './components/header'
 import Swiper from './components/swiper'
 //引入icon组件（宫格导航）
 import Icon from './components/icon'
+//引入commend组件
+import Commend from './components/commend'
+import Weekond from './components/weekond'
 
 
 export default {
@@ -24,8 +29,9 @@ export default {
       //注册组件
       Header,
       Swiper,
-      Icon
-    
+      Icon,
+      Commend,
+      Weekond
       
     }
   }

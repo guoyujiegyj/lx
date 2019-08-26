@@ -102,7 +102,7 @@ export default {
                     // display: inline-block;
                     width:100%;
                     margin-top: .2rem;
-                    font-size:.32rem;
+                    font-size:$fontCommonSize;
                     //引入混合器,设置溢出文本...隐藏。
                     @include textHidden;
                     

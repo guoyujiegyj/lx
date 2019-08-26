@@ -47,7 +47,7 @@ export default {
 
             text-align: center;
             .iconfont{
-                font-size: .2rem;
+                font-size: .2rem;;
                 margin-left: .06rem;
             }
         }
