@@ -19,9 +19,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/varible.scss';
+@import '../../../assets/varible.scss';
     .header{
-        height:.86rem;
+        height: .86rem;
         line-height: .86rem;
         display: flex;
         color:#fff;
