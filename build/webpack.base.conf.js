@@ -10,11 +10,16 @@ function resolve (dir) {
 
 
 
+
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
   },
+  //内网穿透时遇到问题，添加如下代码。
+  devServer: {
+    　　disableHostCheck: true,
+    },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -29,6 +34,7 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+
   module: {
     rules: [
       {
@@ -67,6 +73,7 @@ module.exports = {
       }
     ]
   },
+  
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).

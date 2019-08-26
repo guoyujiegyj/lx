@@ -2,6 +2,10 @@
   <div>
     <Header></Header>
     <Swiper></Swiper>
+    <Icon></Icon>
+    
+    
+    
   </div>
 </template>
 
@@ -10,12 +14,19 @@
 import Header from './components/header'
 //引入轮播组件
 import Swiper from './components/swiper'
+//引入icon组件（宫格导航）
+import Icon from './components/icon'
+
+
 export default {
   name: 'Home',
   components:{
       //注册组件
       Header,
-      Swiper
+      Swiper,
+      Icon
+    
+      
     }
   }
 </script>

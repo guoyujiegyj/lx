@@ -1,0 +1,6 @@
+//文字溢出的...效果
+@mixin textHidden {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
