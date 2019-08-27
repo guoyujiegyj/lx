@@ -7,14 +7,17 @@
         <span class="iconfont">&#xe62b;</span>
         请输入...</div>
     <div class="header-right">
-        城市<span class="iconfont">&#xe62e;</span>
+        {{city}}<span class="iconfont">&#xe62e;</span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  props:{
+      city:String
+  }
 }
 </script>
 
