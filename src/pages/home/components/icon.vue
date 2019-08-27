@@ -2,10 +2,9 @@
   <div class="parentIcon">
       <div class="icon">
         <div v-for="item in iconList" :key="item.id">
-            <img :src="item.url" alt="">
-            <span>{{item.title}}</span>
+            <img :src="item.imgUrl" alt="">
+            <span>{{item.desc}}</span>
         </div>
-       
     </div>
   </div>
 </template>
@@ -13,63 +12,12 @@
 <script>
 export default {
   name: 'Icon',
+  props:{
+      iconList:Array
+  },
   data(){
       return{
-          iconList:[
-              {
-                  id:0,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/hotel.png",
-                  title:"酒店"
-              },
-              {
-                  id:1,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/flight.png",
-                  title:"机票"
-                  
-              },
-              {
-                  id:2,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/package.png",
-                  title:"度假"
-              },
-              {
-                  id:3,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/train.png",
-                  title:"火车票"
-              },
-              {
-                  id:4,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/piao.png",
-                  title:"景点门票"
-              },
-              {
-                  id:5,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/group.png",
-                  title:"特惠酒店"
-              },
-              
-              {
-                  id:6,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/bargainflight.png",
-                  title:"查找"
-              },
-              {
-                  id:7,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/piao.png",
-                  title:"景点门票"
-              },
-              {
-                  id:8,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/group.png",
-                  title:"特惠酒得sss到店"
-              },
-              
-              {
-                  id:9,
-                  url:"//s.qunarzz.com/homenode/images/touchheader/bargainflight.png",
-                  title:"查找"
-              }
-          ]
+       
       }
   }
 }
