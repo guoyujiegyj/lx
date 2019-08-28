@@ -6,9 +6,11 @@
     <div class="header-input">
         <span class="iconfont">&#xe62b;</span>
         请输入...</div>
-    <div class="header-right">
-        {{city}}<span class="iconfont">&#xe62e;</span>
-    </div>
+    <router-link to="/city">
+        <div class="header-right">
+            {{city}}<span class="iconfont">&#xe62e;</span>
+        </div>
+    </router-link>
   </div>
 </template>
 
@@ -33,6 +35,9 @@ export default {
             width:.64rem;
             margin:0 .2rem;
             text-align: center;
+        }
+        a{
+            color:#fff;
         }
         .header-input{
             flex:1;
