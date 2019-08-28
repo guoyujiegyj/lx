@@ -26,8 +26,8 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/varible.scss';
     .header{
-        height: .86rem;
-        line-height: .86rem;
+        height: $headerHeight;
+        line-height: $headerHeight;
         display: flex;
         color:#fff;
         background-color:$bgColor;
