@@ -20,7 +20,7 @@ export default {
 @import '../../../assets/varible.scss';
     .header{
         position:relative;
-        height: .86rem;
+        height: $headerHeight;
         line-height: $headerHeight;
         display: flex;
         color:#fff;
