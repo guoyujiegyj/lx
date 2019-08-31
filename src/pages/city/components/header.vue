@@ -36,7 +36,9 @@ export default {
             color:#fff;
             text-align:center;
         }
-        
+        .title{
+          font-size:$fontCommonSize;
+        }
         
         
     }

@@ -1,80 +1,87 @@
 <template>
-  <div class="list">
-    <div class="area">
-        <div class="title border-topbottom">当前城市</div>
-        <div class="button-list">
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
-            </div>
-            
-        </div>
-    </div>
-    <div class="area">
-        <div class="title border-topbottom">热门城市</div>
-        <div class="button-list">
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
-            </div>
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
-            </div>
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
-            </div>
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
-            </div>
-            <div class="button-wrapper">
-                <div class="button">北京</div>
-               
+  <div class="list" ref="wrapper">
+      <div >
+        <div class="area">
+            <div class="title border-topbottom">当前城市</div>
+            <div class="button-list">
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+                
             </div>
         </div>
-    </div>
-    <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class=item-list>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
+        <div class="area">
+            <div class="title border-topbottom">热门城市</div>
+            <div class="button-list">
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+                <div class="button-wrapper">
+                    <div class="button">北京</div>
+                
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="area">
-        <div class="title border-topbottom">B</div>
-        <div class=item-list>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
+        <div class="area">
+            <div class="title border-topbottom">A</div>
+            <div class=item-list>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+            </div>
         </div>
-    </div>
-    <div class="area">
-        <div class="title border-topbottom">C</div>
-        <div class=item-list>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
-            <div class="item border-bottom">阿拉善</div>
+        <div class="area">
+            <div class="title border-topbottom">B</div>
+            <div class=item-list>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+            </div>
+        </div>
+        <div class="area">
+            <div class="title border-topbottom">C</div>
+            <div class=item-list>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+                <div class="item border-bottom">阿拉善</div>
+            </div>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import Bscroll from 'better-scroll'
+
 export default {
   name: 'List',
-  
+  //实例化scroll对象。
+  mounted(){
+      this.scroll=new Bscroll(this.$refs.wrapper)
+  }
 }
 </script>
 
@@ -82,11 +89,11 @@ export default {
 @import '../../../assets/varible.scss';
     .list{
         position: absolute;
-        top:1.4rem;
+        top:1.55rem;
         left:0;
         right:0;
         bottom:0;
-        background:red;
+        font-size:$fontCommonSize;
         overflow: hidden;
         .border-topbottom{
             &::before{
@@ -98,11 +105,13 @@ export default {
             }
         }
         .title{
-            line-height: .4rem;
+            line-height: .56rem;
             background: #eee;
-            padding-left: .2rem;
+            padding-left:.2rem;
+            padding-top:.1rem;
+            padding-bottom:.07rem;
             color:#666;
-            font-size: .26rem;
+            font-size: $titleCommonSize;
         }
         .button-list{
             padding:.1rem .6rem .1rem .1rem;

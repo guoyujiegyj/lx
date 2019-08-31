@@ -15,7 +15,7 @@ export default {
 @import '../../../assets/varible.scss';
   .search{
     background:$bgColor;
-    height:.56rem;
+    height:.7rem;
     padding:0 .1rem;
     
     input{
@@ -25,6 +25,7 @@ export default {
       border-radius:.05rem;
       box-sizing:border-box;
       font-size:$littleCommenSize;
+      line-height: .5rem;
     }
   }
         
