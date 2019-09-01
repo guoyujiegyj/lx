@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="area" v-for="(item,key) of city" :key="key">
+        <div class="area" v-for="(item,key) of city" :key="key" :ref="key">
             <div class="title border-topbottom" >{{key}}</div>
             <div class=item-list v-for="innerItem of item" :key="innerItem.id">
                 <div class="item border-bottom">{{innerItem.name}}</div> 
@@ -35,11 +35,23 @@ export default {
   name: 'List',
   props:{
       city:Object,
-      hotCity:Array
+      hotCity:Array,
+      //city.vue传来的letter。
+      letter:String
   },
   //实例化scroll对象。
   mounted(){
       this.scroll=new Bscroll(this.$refs.wrapper)
+  },
+  watch:{
+      //监听letter属性。只要letter数据发生变化，就会触发此方法。
+      letter(){
+          if(this.letter){
+              const area = this.$refs[this.letter][0]
+               this.scroll.scrollToElement(area)
+          }
+          
+      }
   }
 }
 </script>

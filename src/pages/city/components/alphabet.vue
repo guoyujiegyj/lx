@@ -1,6 +1,6 @@
 <template>
   <ul class="list">
-      <li v-for="(item,key) in city" :key=key>{{key}}</li>
+      <li @click="handleClick" v-for="(item,key) in city" :key=key>{{key}}</li>
   </ul>
 </template>
 
@@ -10,7 +10,14 @@ export default {
     city:Object
   },
   name: 'Alphabet',
-
+  methods:{
+    handleClick(e){
+      //子组件向父组件传值。
+      //点击字母时，触发change事件，传去参数。
+      this.$emit('change',e.target.innerHTML)
+      
+    }
+  }
 }
 </script>
 
@@ -21,11 +28,10 @@ export default {
      li{
          height:.45rem;
      }
-    //  height:100%;
      display: flex;
      flex-direction: column;
-     
-     justify-content: center;
+      // justify-content: center;
+     top:2.5rem;
      color:$bgColor;
      
      font-size:$titleCommonSize;

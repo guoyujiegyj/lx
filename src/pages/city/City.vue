@@ -2,8 +2,8 @@
   <div>
     <Header></Header>
     <Search></Search>
-    <List :city="city" :hotCity="hotCity"></List>
-    <Alphabet :city="city"></Alphabet>
+    <List :city="city" :hotCity="hotCity" :letter="letter"></List>
+    <Alphabet @change="handleChange" :city="city"></Alphabet>
   </div>
 </template>
 
@@ -27,7 +27,9 @@ export default {
     data(){
       return{
         hotCity:[],
-        city:{}
+        city:{},
+        //letter是子组件传来的字母
+        letter:""
       }
     },
     mounted(){
@@ -47,7 +49,10 @@ export default {
               this.hotCity=res.data.hotCities
               this.city=res.data.cities
           }
-         
+        },
+        //
+        handleChange(letter){
+          this.letter=letter
         }
     }
 }
