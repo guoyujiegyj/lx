@@ -52,7 +52,6 @@ export default {
         }
         .header-right{
             width:1.24rem;
-
             text-align: center;
             .iconfont{
                 font-size: .2rem;;

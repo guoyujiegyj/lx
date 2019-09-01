@@ -2,12 +2,14 @@
   <div>
     <Header></Header>
     <Search></Search>
-    <List></List>
-    <Alphabet></Alphabet>
+    <List :city="city" :hotCity="hotCity"></List>
+    <Alphabet :city="city"></Alphabet>
   </div>
 </template>
 
 <script>
+//引入axios模块
+import axios from 'axios'
 //引入头部组件。
 import Header from './components/header'
 import Search from './components/Search'
@@ -16,12 +18,38 @@ import Alphabet from './components/Alphabet'
 export default {
   name: 'City',
   //注册组件
-   components:{
-     Header,
-     Search,
-     List,
-     Alphabet
-   }
+    components:{
+      Header,
+      Search,
+      List,
+      Alphabet
+    },
+    data(){
+      return{
+        hotCity:[],
+        city:{}
+      }
+    },
+    mounted(){
+      this.getData()
+      
+    },
+    methods:{
+        getData(){
+          axios.get('/api/city.json')
+          .then(this.getDataInfo)
+        },
+        getDataInfo(res){
+          var res=res.data
+          console.log(res)
+          if(res.ret && res.data){
+            
+              this.hotCity=res.data.hotCities
+              this.city=res.data.cities
+          }
+         
+        }
+    }
 }
 </script>
 
