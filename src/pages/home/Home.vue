@@ -70,7 +70,7 @@ export default {
   //每次刷新页面时都会执行此周期。
   activated(){
     //为了实现当城市没变时，不发送ajax请求，如果城市变化，则请求。
-    if(this.lastCity!==this.$store.state.city){
+    if(this.lastCity!=this.$store.state.city){
       this.lastCity=this.$store.state.city
        this.getHomeData()
     }
