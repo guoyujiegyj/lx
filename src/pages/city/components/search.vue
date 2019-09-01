@@ -53,7 +53,7 @@ export default {
           ///一层遍历结果是A,B,等字母。
           this.city[i].forEach(element => {
             //二层遍历结果是对象。
-            if(element.spell.indexOf(this.keyword)>-1 ||
+            if(element.spell.indexOf(this.keyword.toLowerCase())>-1 ||
              element.name.indexOf(this.keyword)>-1){
                result.push(element)
             }

@@ -31,7 +31,7 @@ export default {
      display: flex;
      flex-direction: column;
       // justify-content: center;
-     top:2.5rem;
+     top:1.5rem;
      color:$bgColor;
      
      font-size:$titleCommonSize;
