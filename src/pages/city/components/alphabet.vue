@@ -19,9 +19,9 @@ export default {
  .list{
      position:absolute;
      li{
-         height:.6rem;
+         height:.45rem;
      }
-     height:100%;
+    //  height:100%;
      display: flex;
      flex-direction: column;
      

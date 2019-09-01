@@ -40,8 +40,6 @@ export default {
   //实例化scroll对象。
   mounted(){
       this.scroll=new Bscroll(this.$refs.wrapper)
-      console.log(this.city)
-      console.log(this.hotCity)
   }
 }
 </script>
@@ -49,6 +47,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/varible.scss';
     .list{
+        
         position: absolute;
         top:1.55rem;
         left:0;

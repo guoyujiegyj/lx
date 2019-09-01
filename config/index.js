@@ -13,8 +13,8 @@ module.exports = {
     proxyTable: {
       //配置请求路径：
       '/api':{
-        target:'http://localhost:8080',
-      //  target:'http://192.168.43.86:8080',
+      //  target:'http://localhost:8080',
+        target:'http://192.168.43.86:8080',
         pathRewrite:{
           '^/api':'static/data'
         }
