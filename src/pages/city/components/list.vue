@@ -57,6 +57,7 @@ export default {
   },
   methods:{
       handleChange(city){
+          //点击城市时，将城市保存在$store.
           //这里传递两个参数。在store的index.js里接收并处理。
           this.$store.commit('changeCity',city)
            this.$router.push('/')

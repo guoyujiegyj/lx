@@ -37,12 +37,14 @@ export default {
       swiperList:[],
       iconList:[],
       commendList:[],
-      weekendList:[]
+      weekendList:[],
+      lastCity:''
     }
   },
   methods:{
       getHomeData(){
-        axios.get('/api/index.json')
+        //请求数据，带去参数当前城市
+        axios.get('/api/index.json?city='+this.$store.state.city)
         .then(this.getHomeDataSucc)
       },
       getHomeDataSucc(res){
@@ -59,7 +61,19 @@ export default {
       }
   },
   mounted(){
+    //页面初次挂载时。
     this.getHomeData()
+    //记录初次渲染时的城市。
+    this.lastCity=this.$store.state.city
+  },
+  //当使用《keep-alive》时会有此生命周期，在app.vue里用了keepalive.
+  //每次刷新页面时都会执行此周期。
+  activated(){
+    //为了实现当城市没变时，不发送ajax请求，如果城市变化，则请求。
+    if(this.lastCity!==this.$store.state.city){
+      this.lastCity=this.$store.state.city
+       this.getHomeData()
+    }
   }
 }
 </script>

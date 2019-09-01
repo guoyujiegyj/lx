@@ -43,14 +43,12 @@ export default {
         },
         getDataInfo(res){
           var res=res.data
-          console.log(res)
+          // console.log(res)
           if(res.ret && res.data){
-            
               this.hotCity=res.data.hotCities
               this.city=res.data.cities
           }
         },
-        //
         handleChange(letter){
           this.letter=letter
         }
