@@ -47,10 +47,12 @@ export default {
       //监听letter属性。只要letter数据发生变化，就会触发此方法。
       letter(){
           if(this.letter){
+              //当字母改变时，获取对应字母的元素。
               const area = this.$refs[this.letter][0]
+             
+              //点击字母时滚动到对应区域。
                this.scroll.scrollToElement(area)
           }
-          
       }
   }
 }
