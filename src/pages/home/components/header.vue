@@ -8,7 +8,7 @@
         请输入...</div>
     <router-link to="/city">
         <div class="header-right">
-            {{city}}<span class="iconfont">&#xe62e;</span>
+            {{this.$store.state.city}}<span class="iconfont">&#xe62e;</span>
         </div>
     </router-link>
   </div>
@@ -17,9 +17,6 @@
 <script>
 export default {
   name: 'Header',
-  props:{
-      city:String
-  }
 }
 </script>
 

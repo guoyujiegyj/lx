@@ -6,7 +6,7 @@
     <!--通过keyword是否有值来控制建议列表的显示隐藏-->
     <div class="suggestBox"  v-show="keyword" ref="search">
       <ul>
-      <li  v-for="item of list" class="border-bottom" :key="item.id">{{item.name}}</li>
+      <li  v-for="item of list" @click="handleChange(item.name)" class="border-bottom" :key="item.id">{{item.name}}</li>
       <!--当list为空时让其显示-->
       <li class="border-bottom" v-show="hasList">未找到匹配数据</li>
     </ul>
@@ -28,6 +28,12 @@ export default {
       keyword:'',
       list:[],
       timer:null
+    }
+  },
+  methods:{
+    handleChange(city){
+      this.$store.commit('changeCity',city)
+      this.$router.push('/')
     }
   },
   computed:{

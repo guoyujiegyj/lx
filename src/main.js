@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 import './assets/border.css'
 import './assets/reset.css'
+//引入vuex实例页面
+import store from './store'
 import fastClick from 'fastclick'
 //引入字体文件
 import './assets/iconfont.css'
@@ -23,6 +25,7 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

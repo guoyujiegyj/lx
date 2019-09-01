@@ -5,7 +5,7 @@
             <div class="title border-topbottom">当前城市</div>
             <div class="button-list">
                 <div class="button-wrapper">
-                    <div class="button">北京</div>
+                    <div class="button">{{this.$store.state.city}}</div>
                 </div>
             </div>
         </div>
@@ -13,14 +13,14 @@
             <div class="title border-topbottom">热门城市</div>
             <div class="button-list">
                 <div class="button-wrapper"  v-for="item in hotCity" :key=item.id >
-                    <div class="button">{{item.name}}</div>
+                    <div class="button" @click="handleChange(item.name)">{{item.name}}</div>
                 </div>
             </div>
         </div>
         <div class="area" v-for="(item,key) of city" :key="key" :ref="key">
             <div class="title border-topbottom" >{{key}}</div>
             <div class=item-list v-for="innerItem of item" :key="innerItem.id">
-                <div class="item border-bottom">{{innerItem.name}}</div> 
+                <div class="item border-bottom" @click="handleChange(innerItem.name)">{{innerItem.name}}</div> 
             </div>
         </div>
         
@@ -53,6 +53,13 @@ export default {
               //点击字母时滚动到对应区域。
                this.scroll.scrollToElement(area)
           }
+      }
+  },
+  methods:{
+      handleChange(city){
+          //这里传递两个参数。在store的index.js里接收并处理。
+          this.$store.commit('changeCity',city)
+           this.$router.push('/')
       }
   }
 }

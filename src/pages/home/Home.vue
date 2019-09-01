@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :city="city"></Header>
+    <Header></Header>
     <Swiper :swiperList="swiperList"></Swiper>
     <Icon :iconList="iconList"></Icon>
     <Commend :commendList="commendList"></Commend>
@@ -33,7 +33,7 @@ export default {
   },
   data(){
     return{
-      city:"",
+      // city:"",
       swiperList:[],
       iconList:[],
       commendList:[],
@@ -49,7 +49,7 @@ export default {
          res=res.data
          if(res.ret && res.data){
            //整个home的数据为res.data,为各个组件数据赋值
-           this.city=res.data.city
+          //  this.city=res.data.city
            this.swiperList=res.data.swiperList
            this.iconList=res.data.iconList
            this.commendList=res.data.recommendList
