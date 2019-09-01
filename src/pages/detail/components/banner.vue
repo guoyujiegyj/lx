@@ -29,11 +29,12 @@ export default {
     .bannerInfo{
       display: flex;
       position:absolute;
-      bottom:.1rem;
+      bottom:0;
       left:0;
       right:0;
       height:.6rem;
-      
+      //图片底部的线性渐变。
+      background:linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.8));
       line-height: .6rem;
       .title{
         
