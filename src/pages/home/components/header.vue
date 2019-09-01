@@ -8,7 +8,8 @@
         请输入...</div>
     <router-link to="/city">
         <div class="header-right">
-            {{this.$store.state.city}}<span class="iconfont">&#xe62e;</span>
+            <span class="city">{{this.$store.state.city}}</span>
+            <span class="iconfont">&#xe62e;</span>
         </div>
     </router-link>
   </div>
@@ -22,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../assets/varible.scss';
+@import '../../../assets/textHidden.scss';
     .header{
         height: $headerHeight;
         line-height: $headerHeight;
@@ -48,11 +50,15 @@ export default {
             padding-left:.1rem;
         }
         .header-right{
-            width:1.24rem;
+            display: flex;
+            justify-content: space-between;
             text-align: center;
             .iconfont{
                 font-size: .2rem;;
-                margin-left: .06rem;
+                margin-right: .1rem;
+            }
+            .city{
+                padding:0 .1rem;
             }
         }
     }
