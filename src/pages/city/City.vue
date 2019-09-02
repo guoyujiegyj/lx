@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <Header :headerInfo="headerInfo"></Header>
-    <Search :city="city"></Search>
-    <List :city="city" :hotCity="hotCity" :letter="letter"></List>
-    <Alphabet @change="handleChange" :city="city"></Alphabet>
-  </div>
+  <Fade>
+    <div>
+      <Header :headerInfo="headerInfo"></Header>
+      <Search :city="city"></Search>
+      <List :city="city" :hotCity="hotCity" :letter="letter"></List>
+      <Alphabet @change="handleChange" :city="city"></Alphabet>
+    </div>
+  </Fade>
 </template>
 
 <script>
+//引入动画组件
+import Fade from '../../common/animation/fade' 
 //引入axios模块
 import axios from 'axios'
 //引入头部组件。
@@ -22,7 +26,8 @@ export default {
       Header,
       Search,
       List,
-      Alphabet
+      Alphabet,
+      Fade
     },
     data(){
       return{

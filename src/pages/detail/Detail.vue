@@ -1,15 +1,19 @@
 <template>
-  <div class="detail">
-    <comeBack v-show="comeBackShow"></comeBack>
-    <Header :style="opacityStyle" :headerInfo="headerInfo"  class="header"></Header>
-    <Banner></Banner>
-    <List :list="list"></List>
-    
-    <div class="contant"></div>
-  </div>
+  <Fade>
+    <div class="detail">
+      <comeBack v-show="comeBackShow"></comeBack>
+      <Header :style="opacityStyle" :headerInfo="headerInfo"  class="header"></Header>
+      <Banner></Banner>
+      <List :list="list"></List>
+      
+      <div class="contant"></div>
+    </div>
+  </Fade>
 </template>
 
 <script>
+//引入动画组件
+import Fade from '../../common/animation/fade' 
 import Banner from './components/banner'
 //引入公共组件header
 import Header from '../../common/header/header'
@@ -23,7 +27,8 @@ export default {
     Banner,
     Header,
     comeBack,
-    List
+    List,
+    Fade
   },
   data(){
     return {

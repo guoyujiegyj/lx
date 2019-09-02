@@ -1,29 +1,34 @@
 <template>
-  <div class="container" @click=handleGallary>
+<!--fade里的代码对应fade组件里的插槽。-->
+  <Fade>
+    <div class="container" @click=handleGallary>
         <mt-swipe :auto="4000" :show-indicators="true" class="swip">
             <mt-swipe-item v-for="item of img" :key="item.id">
                 <img  class="swiper-img" :src="item.url">
                 <span class="swiperPage">{{item.title}}/{{item.total}}</span>
-
             </mt-swipe-item>
-
         </mt-swipe> 
-
-  </div>
+    </div>
+  </Fade>
 
 </template>
 
 <script>
+//引人动画组件。
+import Fade from '../animation/fade'
 export default {
     props:{
         img:Array
     },
-  name: 'Gallary',
- data(){
-     return {
-       
-     }
- },
+    name: 'Gallary',
+    components:{
+        Fade
+    },
+    data(){
+        return {
+        
+        }
+   },
  methods:{
      handleGallary(){
          //子组件向父组件数据，传close事件。
