@@ -3,6 +3,8 @@
     <comeBack v-show="comeBackShow"></comeBack>
     <Header :style="opacityStyle" :headerInfo="headerInfo"  class="header"></Header>
     <Banner></Banner>
+    <List :list="list"></List>
+    
     <div class="contant"></div>
   </div>
 </template>
@@ -13,13 +15,15 @@ import Banner from './components/banner'
 import Header from '../../common/header/header'
 //引入banner的返回组件。
 import comeBack from './components/comeBack'
+import List from './components/list'
 
 export default {
   name: 'Detail',
   components:{
     Banner,
     Header,
-    comeBack
+    comeBack,
+    List
   },
   data(){
     return {
@@ -31,7 +35,25 @@ export default {
       comeBackShow:true,
       opacityStyle:{
         opacity:0
-      }
+      },
+      list:[
+        {
+          title:"成人票",
+          children:[{
+            title:"成人单人游"
+            },
+            {
+              title:"成人双人游"
+              }  
+          ]
+        },{
+          title:"学生票"
+        },{
+          title:"特惠票"
+        },{
+          title:"儿童票"
+        }
+      ]
     }
   },
   methods:{
@@ -67,6 +89,6 @@ export default {
       }
   }
  .contant{
-   height:15rem;
+   height:10rem;
  }
 </style>
