@@ -1,23 +1,30 @@
 <template>
   <div class="header">
-    <router-link to="/">
+    <router-link :to="headerInfo.path">
       <span class="iconfont comeback">
         &#xe696;
     </span>
     </router-link>
-    <div class="title">选择城市</div>
+    <div class="title">{{headerInfo.title}}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Header',
-  
+  props:{
+      headerInfo:Object
+  },
+  data(){
+      return{
+          
+      }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/varible.scss';
+@import '../../assets/varible.scss';
     .header{
         position:relative;
         height: $headerHeight;
@@ -39,7 +46,5 @@ export default {
         .title{
           font-size:$fontCommonSize;
         }
-        
-        
     }
 </style>

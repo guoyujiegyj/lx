@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Header :headerInfo="headerInfo"></Header>
     <Search :city="city"></Search>
     <List :city="city" :hotCity="hotCity" :letter="letter"></List>
     <Alphabet @change="handleChange" :city="city"></Alphabet>
@@ -11,7 +11,7 @@
 //引入axios模块
 import axios from 'axios'
 //引入头部组件。
-import Header from './components/header'
+ import Header from '../../common/header/header'
 import Search from './components/Search'
 import List from './components/List'
 import Alphabet from './components/Alphabet'
@@ -29,7 +29,12 @@ export default {
         hotCity:[],
         city:{},
         //letter是子组件传来的字母
-        letter:""
+        letter:"",
+        //为子组件header传递的数据。
+        headerInfo:{
+          title:"城市选择",
+          path:"/"
+        }
       }
     },
     mounted(){
