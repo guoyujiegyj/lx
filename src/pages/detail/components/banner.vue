@@ -1,19 +1,46 @@
 <template>
-  <div class="banner">
-    <img class="bannerImg" src="https://imgs.qunarzz.com/vs_ceph_vs_tts/d2fd1bcb-1ce3-427e-a61c-7c0c41c2196a.jpg_r_390x260x90_733fb20e.jpg">
-    <div class="bannerInfo">
-      <div class="title">大连海洋馆99超刺激</div>
-      <div class="titleImg">
-        <span class="iconfont">&#xe6df;</span>
-        45
+  <div>
+    <div class="banner" @click="handleBanner">
+      <img class="bannerImg" src="https://imgs.qunarzz.com/vs_ceph_vs_tts/d2fd1bcb-1ce3-427e-a61c-7c0c41c2196a.jpg_r_390x260x90_733fb20e.jpg">
+      <div class="bannerInfo">
+        <div class="title">大连海洋馆99超刺激</div>
+        <div class="titleImg">
+          <span class="iconfont">&#xe6df;</span>
+          45
+        </div>
       </div>
     </div>
+    <!-- 使用公用组件。@close是父组件接受子组件触发的事件监听 -->
+    <common-gallary @close="handleClose" :img="list" v-show="showGallary"></common-gallary>
   </div>
 </template>
 
 <script>
+//引入公用组件画廊。
+import commonGallary from '../../../common/gallary/gallary'
 export default {
   name: 'Banner',
+  data(){
+    return{
+      //控制画廊显示与隐藏。
+      showGallary:false,
+      list:[
+             {total:3,url:"https://imgs.qunarzz.com/vs_ceph_vs_tts/d2fd1bcb-1ce3-427e-a61c-7c0c41c2196a.jpg_r_390x260x90_733fb20e.jpg",title:1},
+             {total:3,url:"https://imgs.qunarzz.com/vs_ceph_vs_tts/d2fd1bcb-1ce3-427e-a61c-7c0c41c2196a.jpg_r_390x260x90_733fb20e.jpg",title:2}
+         ]
+    }
+  },
+  components:{
+    commonGallary
+  },
+  methods:{
+    handleBanner(){
+      this.showGallary=true
+    },
+    handleClose(){
+      this.showGallary=false
+    }
+  }
 }
 </script>
 
