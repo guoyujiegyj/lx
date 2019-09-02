@@ -48,6 +48,9 @@ export default {
   activated(){
     //为scroll绑定事件监听。
     window.addEventListener('scroll',this.handleScroll)
+  },
+  deactivated(){
+    window.removeEventListener('scroll',this.handleScroll)
   }
   
 }

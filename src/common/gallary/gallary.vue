@@ -43,9 +43,10 @@ export default {
         bottom:0;
         background:#000;
         width:100%;
-        z-index:10002;
+        height:100%;
+        z-index:1002;
         .swip{
-            padding-top:24%;
+            padding-top:18%;
             top:100px;
             box-sizing: border-box;
         }
