@@ -33,6 +33,7 @@ export default {
         color:#fff;
         background-color:$bgColor;
         justify-content:center;
+        z-index:1001;
         .comeback{
           //返回箭头是绝对定位。
             position:absolute;
